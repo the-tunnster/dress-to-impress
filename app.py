@@ -79,12 +79,18 @@ def detect_skin_tone(image):
     return f"Skin Tone: {avg_color} (Placeholder)"  # Map to predefined skin tones
 
 def detect_hair_color(image):
-    """Determine the dominant hair color from the image."""
-    image_np = np.array(image)
-    hsv = cv2.cvtColor(image_np, cv2.COLOR_RGB2HSV)
-    hist = cv2.calcHist([hsv], [0], None, [180], [0, 180])
-    dominant_hue = np.argmax(hist)
-    return f"Hair Color: {dominant_hue} (Placeholder)"  # Map hue to hair colors
+	"""Determine the dominant hair color from the top portion of the image."""
+	image_np = np.array(image)
+	top_region = image_np[: image_np.shape[0] // 2, :]
+	hsv = cv2.cvtColor(top_region, cv2.COLOR_RGB2HSV)
+	hist = cv2.calcHist([hsv], [0], None, [180], [0, 180])
+	dominant_hue = np.argmax(hist)
+	# Get an approximate BGR value for reference
+	color_bgr = cv2.cvtColor(
+		np.uint8([[[dominant_hue, 255, 255]]]),
+		cv2.COLOR_HSV2BGR
+	)[0][0]
+	return f"Dominant Hue: {dominant_hue}, Approx. BGR: {color_bgr.tolist()}"
 
 """
 def get_gpt_recommendations(face_data, user_measurements):
