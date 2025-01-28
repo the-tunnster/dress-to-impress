@@ -1,5 +1,12 @@
 # Dress-to-Impress: AI-Powered Styling App
 
+### To create the virtual environment
+`python3 -m venv ./.venv`
+
+### To activate the virtual environment and install dependancies
+`source ./.venv/bin/activate`
+`pip install -r requirements.txt`
+
 ## **1️⃣ Capture & Analyze User Features**
 - Take a photo and extract key attributes using **AI & Computer Vision**:
   - **Gender Presentation:** Masculine / Feminine
