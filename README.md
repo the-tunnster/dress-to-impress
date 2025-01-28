@@ -1,8 +1,6 @@
 # Dress-to-Impress 👗🤵 | AI-Powered Fashion Stylist
 ### Personalized Styling and Outfit Recommendations Using AI
 
-![Fashion AI](https://source.unsplash.com/featured/?fashion,style,clothing)
-
 ## 📌 Overview
 **Dress-to-Impress** is an AI-powered fashion recommendation system that provides **personalized styling advice** based on a user's **facial features, hair color, face shape, and body measurements**. Using **OpenAI’s GPT-4**, the app generates **custom outfit, hairstyle, and color palette suggestions** while integrating **Unsplash API** to provide **fashion inspiration images** tailored to the user’s profile.
 
